@@ -1,0 +1,6 @@
+print("Programa para mostrar el cuadrado de un numero ")
+numero1=float(input("Digite el numero: "))
+resultado=float(0)
+resultado=float(numero1**2)
+print("La potencia del numero es: ",resultado)
+exit()

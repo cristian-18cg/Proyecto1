@@ -1,0 +1,6 @@
+print("Programa para sumar dos numeros")
+numero1=int(input("Digite numero 1: "))
+numero2=int(input("Digite numero 2: "))
+suma=int(numero1+numero2)
+print("La suma de los dos numeros es: ",suma)
+exit()
