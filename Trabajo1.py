@@ -1,6 +1,0 @@
-print("Programa para calcular el area de un triangulo")
-base=int(input("Digite la base: "))
-altura=int(input("Digite la altura: "))
-area=int((base*altura)/2)
-print("el area del triangulo es: ", area)
-exit()
