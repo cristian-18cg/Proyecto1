@@ -101,9 +101,143 @@ def inicio():
        return menu_2()
   menu_2()
  elif menu1==2:
-    exit()
+    def menu_condicionales(): 
+     os.system('cls')
+     menu3=int(input("Condicionales\n  1. Numero positivo o negativo.\n  2. Cual numero es mayor y cual menor.\n  3. Mayor y menor de 3 numeros\n  4. Dados dos números A y B, sumarlos si A es menor que B o sino restarlos. \n  5. Dados dos números A y B encontrar el cociente entre A y B. \n  6. A y B sumarlos si al menos uno de ellos es negativo, en caso contrario multiplicarlos.  \n  7. Año biciesto. \n  8. Volver al menu inicio \n  99. Salir \nDigite una opcion:"))
+     if menu3== 1:
+        os.system('cls')
+        print("Programa para evaluar signo del numero")
+        numero1=0
+        numero1=float(input("Digite el numero: "))
+        if numero1 >= 1:
+            print("el numero es positivo")
+        elif numero1 == 0:
+            print("el numero es neutro")
+        else:
+            print("el numero es negativo")
+        time.sleep(2)
+        return menu_condicionales()
+     elif menu3==2:
+       os.system('cls') 
+       print("Programa para comparar dos numeros")
+       numero1=0 
+       numero2=0
+       numero1=float(input("Digite el numero 1: "))
+       numero2=float(input("Digite el numero 2: "))
+       if numero1 > numero2:
+           print("El numero ",numero1, "es mayor","\nEl numero ",numero2, "es menor")
+       elif numero1 == numero2:
+           print("El numero 1: ",numero1, " y el numero 2: ",numero2, "son iguales")
+       else:
+           print("El numero ",numero2, "es mayor","\nEl numero ",numero1, "es menor" )  
+       time.sleep(2)
+       return menu_condicionales()     
+     elif menu3==3:
+         os.system('cls')
+         print("Programa para comparar tres numeros")
+         numero1=0 
+         numero2=0
+         numero3=0
+         mayor=0
+         numero1=float(input("Digite el numero 1: "))
+         numero2=float(input("Digite el numero 2: "))
+         numero3=float(input("Digite el numero 3: "))
+         if numero1 > numero2 and numero1 > numero3:
+             mayor=float(numero1)
+             if  numero2>numero3:
+                 print("El numero mayor es: ",mayor,"\nEl numero menor es: ",numero3)
+             else:
+                 print("El numero mayor es: ",mayor,"\nEl numero menor es: ",numero2)    
+         elif numero2>numero1 and numero2>numero3 :
+             mayor=float(numero2)
+             if  numero1>numero3:
+                 print("El numero mayor es: ",mayor,"\nEl numero menor es: ",numero3)
+             else:
+                 print("El numero mayor es: ",mayor,"\nEl numero menor es: ",numero1)
+         elif numero3>numero2 and numero3>numero1:
+             mayor=float(numero3)
+             if  numero2>numero1:
+                 print("El numero mayor es: ",mayor,"\nEl numero menor es: ",numero1)
+             else:
+                 print("El numero mayor es: ",mayor,"\nEl numero menor es: ",numero2)        
+         else:
+             if numero2 == numero1 and numero2 == numero3:
+              print("los numeros son iguales")
+         time.sleep(2)
+         return menu_condicionales()
+     elif menu3==4:
+        os.system('cls')
+        A=float(input("Digite A: "))
+        B=float(input("Digite B: "))
+        if A<B:
+         suma=float(A+B)
+         print("la suma de A:",A," + ","B:",B," es:",suma)
+        else:
+         resta=float(A-B)
+         print("la resta de A:",A," - ","B:",B," es:",resta)
+        time.sleep(2)
+        return menu_condicionales()
+     elif menu3==5:
+        os.system('cls') 
+        print("Programa para encontrar el cociente entre A y B")
+        A=float(input("Digite A: "))
+        B=float(input("Digite B: "))
+        if B==0:
+         print("La definicion no es posible")
+        else:
+         cociente=float(A/B)
+         print("El cociente de A: ",A," entre B: ",B," Es: ",cociente)
+        time.sleep(2)
+        return menu_condicionales()
+     elif menu3==6:
+        os.system('cls') 
+        a=float(input("Digite A: "))
+        b=float(input("Digite B: "))
+        if a<0 or b<0:
+            suma=float(a+b)
+            print("El resultado de a:",a," + b:",b ,"es:",suma)
+        else:
+            mult=float(a*b)
+            print("El resultado de a:",a," * b:",b ,"es:",mult) 
+        time.sleep(2)
+        return menu_condicionales()
+     elif menu3==7:
+        os.system('cls')
+        print("Programa para saber si es un año bisiesto")
+        año=int(input("Digite el año: "))
+        if año<1582:
+         print("No entra en el calendario gregoriano")
+        else:
+        
+         if año%4==0:
+            if año%100==0: 
+                if año%400==0:
+                 print(año," Si es un año biciesto")
+                else: 
+                 print(año," No es un año biciesto")
+            else:
+                print(año," Si es un año biciesto")       
+         else:
+            print(año," No es un año biciesto") 
+        time.sleep(2)
+        return menu_condicionales()
+     elif menu3==8:    
+         return inicio()
+     elif menu3==99:
+      os.system('cls')
+      print("Fin del programa...")
+      time.sleep(2)
+      os.system('cls')  
+      exit()    
+     else:
+       print("Digite una opcion valida ")
+       time.sleep(2)
+       return menu_condicionales()
+    menu_condicionales()
  elif menu1==3:
-    exit()
+    def menu_ciclos(): 
+     os.system('cls')
+     menu4=int(input("Ciclos\n  1.  Múltiplos de 3 que hay entre 1 y 100.\n  2. números impares entre 0 y 100.\n  3. Números pares del 1 al 100.\n  4. Cuadrados de los números del 1 al 30. \n  5. Suma los cuadrados de los cien primeros números naturales. \n  6. Números comprendidos entre ellos en secuencia ascendente.  \n  7. Año biciesto. \n  8. Volver al menu inicio \n  99. Salir \nDigite una opcion:"))
  elif menu1==99:
      os.system('cls')
      print("Fin del programa...")
