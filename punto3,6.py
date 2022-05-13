@@ -10,6 +10,7 @@ def inicio():
   time.sleep(2)
   os.system('cls')
   return inicio()
+ 
  else:
    while num2>=num1:
        print (num1)
