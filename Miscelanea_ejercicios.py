@@ -237,7 +237,94 @@ def inicio():
  elif menu1==3:
     def menu_ciclos(): 
      os.system('cls')
-     menu4=int(input("Ciclos\n  1.  Múltiplos de 3 que hay entre 1 y 100.\n  2. números impares entre 0 y 100.\n  3. Números pares del 1 al 100.\n  4. Cuadrados de los números del 1 al 30. \n  5. Suma los cuadrados de los cien primeros números naturales. \n  6. Números comprendidos entre ellos en secuencia ascendente.  \n  7. Año biciesto. \n  8. Volver al menu inicio \n  99. Salir \nDigite una opcion:"))
+     menu4=int(input("Ciclos\n  1. Múltiplos de 3 que hay entre 1 y 100.\n  2. Números impares entre 0 y 100.\n  3. Números pares del 1 al 100.\n  4. Cuadrados de los números del 1 al 30. \n  5. Suma los cuadrados de los cien primeros números naturales. \n  6. Números comprendidos entre ellos en secuencia ascendente.  \n  7. Sumar todos los números que se digitan por teclado mientras no sea cero. \n  8. Volver al menu inicio \n  99. Salir \nDigite una opcion:"))
+     if menu4==1:
+        os.system('cls') 
+        print("Programa que imprime multiplos de 3 del 1 al 100")
+        for x  in range(1,101):
+         if x%3==0:
+            print(x)
+        time.sleep(2)
+        return menu_ciclos ()
+     elif menu4==2:
+        os.system('cls')
+        print("Programa que imprime numeros primos del 0 al 100")
+        for x  in range(0,101):
+         if x%2==1:
+             print(x)
+        time.sleep(2)
+        return menu_ciclos () 
+     elif menu4==3:
+        os.system('cls')
+        print("Programa que imprime numeros pares del 1 al 100")
+        for x  in range(1,101):
+         if x%2==0:
+            print(x)
+        time.sleep(2)
+        return menu_ciclos () 
+     elif menu4==4:
+        os.system('cls')
+        print("Programa que imprime los cuadrados del 1 al 30")
+        for x  in range(1,31):
+         print(x**2)
+        time.sleep(2)
+        return menu_ciclos () 
+     elif menu4==5:
+        os.system('cls')
+        print("Programa que suma los cuadrados de los cien primeros números naturales")
+        suma=0
+        for x  in range(1,101):
+            cuadrado=int(x**2)
+            suma=(suma+cuadrado)
+            print(x**2)
+            if x==100:
+             print(suma) 
+        time.sleep(2)
+        return menu_ciclos () 
+     elif menu4==6:
+         os.system('cls')
+         def pnto():
+          num1=int(input("Digite numero 1: "))
+          num2=int(input("Digite numero 2: "))
+          if num1>num2:
+           print("El primer numero debe ser mayor al segundo")
+           time.sleep(2)
+           os.system('cls')
+           return menu_ciclos()  
+          else:
+            while num2>=num1:
+                print (num1)
+                num1=num1+1
+         pnto()
+         time.sleep(2)
+         return menu_ciclos ()
+     elif menu4==7:
+        os.system('cls')
+        num2=0
+        while True:
+           num1=int(input("Digite numero a sumar: "))
+           if num1 == 0:
+            print("Fin")
+            time.sleep(2)
+            return menu_ciclos() 
+           else:
+            num2=num2+num1
+            print(num2)
+        
+     elif menu4==8:
+        return inicio()
+     elif menu4==99:
+        os.system('cls')
+        print("Fin del programa...")
+        time.sleep(2)
+        os.system('cls')  
+        exit()     
+     else:
+        print("Digite una opcion valida ")
+        time.sleep(2)
+        return menu_ciclos()           
+
+    menu_ciclos()    
  elif menu1==99:
      os.system('cls')
      print("Fin del programa...")
@@ -249,3 +336,4 @@ def inicio():
      time.sleep(2)
      return inicio()      
 inicio()
+
