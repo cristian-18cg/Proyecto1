@@ -334,6 +334,7 @@ def inicio():
  else:
      print("Digite una opcion valida")
      time.sleep(2)
+     os.system('cls')
      return inicio()      
 inicio()
 
