@@ -155,59 +155,43 @@ def inicio():
         os.system('cls')
         A=float(input("Digite A: "))
         B=float(input("Digite B: "))
-        if A<B:
-         print("la suma de A:",A," + ","B:",B," es:",A+B)
-        else:
-         print("la resta de A:",A," - ","B:",B," es:",A-B)
+        if A<B:print("la suma de A:",A," + ","B:",B," es:",A+B)
+        else:print("la resta de A:",A," - ","B:",B," es:",A-B)
         time.sleep(2)
         return menu_condicionales()
-     elif menu3==5:
+     elif menu3=='5':
         os.system('cls') 
         print("Programa para encontrar el cociente entre A y B")
         A=float(input("Digite A: "))
         B=float(input("Digite B: "))
-        if B==0:
-         print("La definicion no es posible")
-        else:
-         cociente=float(A/B)
-         print("El cociente de A: ",A," entre B: ",B," Es: ",cociente)
+        if B==0:print("La definicion no es posible")
+        else:print("El cociente de A: ",A," entre B: ",B," Es: ",A/B)
         time.sleep(2)
         return menu_condicionales()
-     elif menu3==6:
+     elif menu3=='6':
         os.system('cls') 
         a=float(input("Digite A: "))
         b=float(input("Digite B: "))
-        if a<0 or b<0:
-            suma=float(a+b)
-            print("El resultado de a:",a," + b:",b ,"es:",suma)
-        else:
-            mult=float(a*b)
-            print("El resultado de a:",a," * b:",b ,"es:",mult) 
+        if a<0 or b<0:print("El resultado de a:",a," + b:",b ,"es:",a+b)
+        else:print("El resultado de a:",a," * b:",b ,"es:",a*b) 
         time.sleep(2)
         return menu_condicionales()
-     elif menu3==7:
+     elif menu3=='7':
         os.system('cls')
         print("Programa para saber si es un año bisiesto")
         año=int(input("Digite el año: "))
-        if año<1582:
-         print("No entra en el calendario gregoriano")
+        if año<1582:print("No entra en el calendario gregoriano")
         else:
-        
          if año%4==0:
             if año%100==0: 
-                if año%400==0:
-                 print(año," Si es un año biciesto")
-                else: 
-                 print(año," No es un año biciesto")
-            else:
-                print(año," Si es un año biciesto")       
-         else:
-            print(año," No es un año biciesto") 
+                if año%400==0:print(año," Si es un año biciesto")
+                else:print(año," No es un año biciesto")
+            else:print(año," Si es un año biciesto")       
+         else:print(año," No es un año biciesto") 
         time.sleep(2)
         return menu_condicionales()
-     elif menu3==8:    
-         return inicio()
-     elif menu3==99:
+     elif menu3=='8':return inicio()
+     elif menu3=='99':
       os.system('cls')
       print("Fin del programa...")
       time.sleep(2)
@@ -221,24 +205,23 @@ def inicio():
  elif menu1=='3':
     def menu_ciclos(): 
      os.system('cls')
-     menu4=int(input("Ciclos\n  1. Múltiplos de 3 que hay entre 1 y 100.\n  2. Números impares entre 0 y 100.\n  3. Números pares del 1 al 100.\n  4. Cuadrados de los números del 1 al 30. \n  5. Suma los cuadrados de los cien primeros números naturales. \n  6. Números comprendidos entre ellos en secuencia ascendente.  \n  7. Sumar todos los números que se digitan por teclado mientras no sea cero. \n  8. Volver al menu inicio \n  99. Salir \nDigite una opcion:"))
-     if menu4==1:
+     menu4=input("Ciclos\n  1. Múltiplos de 3 que hay entre 1 y 100.\n  2. Números impares entre 0 y 100.\n  3. Números pares del 1 al 100.\n  4. Cuadrados de los números del 1 al 30. \n  5. Suma los cuadrados de los cien primeros números naturales. \n  6. Números comprendidos entre ellos en secuencia ascendente.  \n  7. Sumar todos los números que se digitan por teclado mientras no sea cero. \n  8. Volver al menu inicio \n  99. Salir \nDigite una opcion:")
+     if menu4=='1':
         os.system('cls') 
         print("Programa que imprime multiplos de 3 del 1 al 100")
         for x  in range(1,101):
-         if x%3==0:
-            print(x)
+         if x%3==0:print(x)
         time.sleep(2)
         return menu_ciclos ()
-     elif menu4==2:
+     elif menu4=='2':
         os.system('cls')
-        print("Programa que imprime numeros primos del 0 al 100")
+        print("Programa que imprime numeros impares del 0 al 100")
         for x  in range(0,101):
          if x%2==1:
              print(x)
-        time.sleep(2)
+        time.sleep(5)
         return menu_ciclos () 
-     elif menu4==3:
+     elif menu4=='3':
         os.system('cls')
         print("Programa que imprime numeros pares del 1 al 100")
         for x  in range(1,101):
@@ -246,14 +229,14 @@ def inicio():
             print(x)
         time.sleep(2)
         return menu_ciclos () 
-     elif menu4==4:
+     elif menu4=='4':
         os.system('cls')
         print("Programa que imprime los cuadrados del 1 al 30")
         for x  in range(1,31):
          print(x**2)
         time.sleep(2)
         return menu_ciclos () 
-     elif menu4==5:
+     elif menu4=='5':
         os.system('cls')
         print("Programa que suma los cuadrados de los cien primeros números naturales")
         suma=0
@@ -265,39 +248,35 @@ def inicio():
              print(suma) 
         time.sleep(2)
         return menu_ciclos () 
-     elif menu4==6:
+     elif menu4=='6':
          os.system('cls')
-         def pnto():
-          num1=int(input("Digite numero 1: "))
-          num2=int(input("Digite numero 2: "))
-          if num1>num2:
-           print("El primer numero debe ser mayor al segundo")
-           time.sleep(2)
-           os.system('cls')
-           return menu_ciclos()  
-          else:
-            while num2>=num1:
-                print (num1)
-                num1=num1+1
-         pnto()
+         num1=int(input("Digite numero 1: "))
+         num2=int(input("Digite numero 2: "))
+         if num1>num2:
+          print("El primer numero debe ser menor al segundo")
+          time.sleep(2)
+          os.system('cls')
+          return menu_ciclos()  
+         else:
+          while num2>=num1:
+              print (num1)
+              num1=num1+1
          time.sleep(2)
          return menu_ciclos ()
-     elif menu4==7:
+     elif menu4=='7':
         os.system('cls')
         num2=0
         while True:
            num1=int(input("Digite numero a sumar: "))
            if num1 == 0:
-            print("Fin")
+            print("Fin de la sumatoria")
             time.sleep(2)
             return menu_ciclos() 
            else:
             num2=num2+num1
             print(num2)
-        
-     elif menu4==8:
-        return inicio()
-     elif menu4==99:
+     elif menu4=='8':return inicio()
+     elif menu4=='99':
         os.system('cls')
         print("Fin del programa...")
         time.sleep(2)
